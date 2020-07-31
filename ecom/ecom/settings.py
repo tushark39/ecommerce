@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api',
     'api.category',
-    'api.product'
+    'api.product',
+    # 'api.user'
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = os.path.join(BASE_DIR,"media/")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+# AUTH_USER_MODEL ='user.CustomUser'
+
 CORS_ORIGIN_ALLOW_ALL = True
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
