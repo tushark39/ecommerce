@@ -7,6 +7,6 @@ export const getProduct = () =>{
         
         return res.json();
     })
-    .catch(e=>console.log('Error : '+ e)
+    .catch(e=>console.log('Error : '+ e.message)
     )
 }
