@@ -24,7 +24,8 @@ export const removeItemFromCart = productId => {
         if (localStorage.getItem('cart')) {
             cart = JSON.parse(localStorage.getItem('cart'))
         }
-        cart.map((product,i)=>{
+        // eslint-disable-next-line
+        cart.map( (product,i) => {
             if(product.id === productId ){
                 cart.splice(i,1);
             }
@@ -37,7 +38,7 @@ export const removeItemFromCart = productId => {
 export const cartEmpty = next => {
     if(typeof window !== undefined){
     localStorage.removeItem('cart')
-    let cart = []
-    localStorage.setItem('cart',JSON.stringify('cart'))
+    let cart = [] ;
+    localStorage.setItem('cart',JSON.stringify(cart))
     }
 }

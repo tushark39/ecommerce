@@ -23,11 +23,12 @@ const Card = ({
             console.log('Login Please!!')
         }
     }
-    // const getRedirect = redirect => {
-    //     if (redirect) {
-    //         return <Redirect to="/cart" />
-    //     }
-    // }
+    // eslint-disable-next-line
+    const getRedirect = redirect => {
+        if (redirect) {
+            return <Redirect to="/cart" />
+        }
+    }
 
     const showAddToCart = (addToCart) => {
         return (
