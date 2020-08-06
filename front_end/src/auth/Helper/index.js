@@ -28,6 +28,8 @@ export const sigin = user => {
         body: formData
     })
         .then((response) => {
+            console.log('Success : '+response.status);
+            
             return response.json();
         })
         .catch((err) => {
@@ -37,8 +39,8 @@ export const sigin = user => {
 export const authenticate = (data,next)=>{
     if(typeof window !== undefined){
         localStorage.setItem('jwt',JSON.stringify(data))
-        next();
     }
+    next();
 }
 export const isAuthenticated = () => {
     if(typeof window === undefined){
