@@ -1,19 +1,18 @@
 import { API } from "../../backend";
-const orderHelper = (userId, token, orderData) => {
-    const formData = new FormData()
 
-    for (const name in orderData)
-        formData.append(name, orderData[name]);
+export const createOrder = (userId, token, orderData) => {
+  const formData = new FormData();
 
-        return fetch(`${API}order/add/${userID}/${token}/`,{
-            method:"POST",
-            body:formData
-        })
-        .then((res)=>{
-            console.log(JSON.stringify(res));
-            return res.json()
-        })
-        .catch(err => console.log(err))
-}
+  for (const name in orderData) {
+    formData.append(name, orderData[name]);
+  }
 
-export default orderHelper;
+  return fetch(`${API}order/add/${userId}/${token}/`, {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
