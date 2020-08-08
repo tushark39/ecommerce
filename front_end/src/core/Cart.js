@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Base from './Base';
 import Card from './Card';
 import { loadCart } from './Helper/CartHelper';
+import PaymentB from './PaymentB';
 
 const Cart = () => {
 
@@ -46,7 +47,16 @@ const Cart = () => {
                     {products.length !== 0 ? loadAllProducts(products) : <h1>No Products</h1> }
                 </div>
                 <div className="col-6">
-                    {loadCheckout()}
+                    {/* {loadCheckout()} */}
+        {products.length > 0 ? (
+            <PaymentB 
+                products={products}
+                setReload={setReload}
+            />
+
+        ) : (
+            <h3>Cart is Empty</h3>
+        )}
                 </div>
             </div>
         </Base>
